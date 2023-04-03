@@ -20,24 +20,15 @@ public class AlticciService {
     }
 
     public Long alticciDelegate(Long r){
-        alticciRecursiveA(r - 3);
-        alticciRecursiveB(r - 2);
+        alticciRecursive(r);
         return resultList;
     }
 
-    public void alticciRecursiveA(Long a){
+    public void alticciRecursive(Long a){
         if(a.intValue() <= 3) resultList++;
         else {
-            alticciRecursiveA(a - 3);
-            alticciRecursiveB(a - 2);
-        }
-    }
-
-    public void alticciRecursiveB(Long b){
-        if(b.intValue() <= 3) resultList++;
-        else {
-            alticciRecursiveA(b - 3);
-            alticciRecursiveB(b - 2);
+            alticciRecursive(a - 3);
+            alticciRecursive(a - 2);
         }
     }
 
